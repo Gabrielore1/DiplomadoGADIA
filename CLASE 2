@@ -1,0 +1,340 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Gabrielore1/DiplomadoGADIA/blob/main/CLASE%202\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\"\"\"\n",
+        "Comparaciones\n",
+        "Las condiciones en las sentencias condicionales suelen involucrar operadores de comparación:\n",
+        "\n",
+        "- == (igual a)\n",
+        "- != (diferente de)\n",
+        "- > (mayor que)\n",
+        "- < (menor que)\n",
+        "- >= (mayor o igual que)\n",
+        "- <= (menor o igual que)\n",
+        "\"\"\"\n",
+        ""
+      ],
+      "metadata": {
+        "id": "6N3TW4c4nDlh"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\"\"\"\n",
+        "Escribe un programa que verifique si un número ingresado por el usuario es par o impar.\n",
+        "\"\"\"\n",
+        "# Positiva.\n",
+        "num = int(input(\"-> Ingrese un número: \"))\n",
+        "if num%2 == 0:\n",
+        "  print(\"// El número ingresado es par. \")\n",
+        "else:\n",
+        "  print(\"// El número ingresado es impar. \")\n",
+        "\n",
+        "# Negativa.\n",
+        "  num = int(input(\"-> Ingrese un número: \"))\n",
+        "if num%2 != 0:\n",
+        "  print(\"// El número ingresado es impar. \")\n",
+        "else:\n",
+        "  print(\"// El número ingresado es par. \")\n",
+        ""
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "jhz9Xq9ilKZp",
+        "outputId": "6064c583-e942-4f59-c703-f70543a6ca14"
+      },
+      "execution_count": 1,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "-> Ingrese un número: 3\n",
+            "// El número ingresado es impar. \n",
+            "-> Ingrese un número: 3\n",
+            "// El número ingresado es impar. \n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Formato.\n",
+        "num1 = int(input(\"-> Ingrese el primer número: \"))\n",
+        "num2 = int(input(\"-> Ingrese el segundo número: \"))\n",
+        "\n",
+        "if num1 != num2:\n",
+        "\n",
+        "  if num1 > num2:\n",
+        "    print(f\"// El número mayor es: {num1}\")\n",
+        "  else:\n",
+        "    print(f\"// El número mayor es: {num2} \")\n",
+        "\n",
+        "else:\n",
+        "  print(f\"// Ambos números ingresados son el mismo: {num1}.\")\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "BKi90JXGmu77",
+        "outputId": "7fc7cb5f-2410-4158-e970-6b45c522a45f"
+      },
+      "execution_count": 2,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "-> Ingrese el primer número: 1\n",
+            "-> Ingrese el segundo número: 1\n",
+            "// Ambos números ingresados son el mismo: 1.\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Escribe un programa que clasifique la edad en diferentes categorías: Niño (0-12 años), Adolescente (13-17 años), Adulto (18-64 años) y Anciano (65 años o más).\n",
+        "\n",
+        "# Ejemplo de uso\n",
+        "edad = int(input(\"Introduce tu edad: \"))\n",
+        "categoria = clasificar_edad(edad)\n",
+        "print(f\"Tu categoría de edad es: {categoria}\")\n",
+        "\n",
+        "def clasificar_edad(edad):\n",
+        "    if edad < 0:\n",
+        "        return \"Edad no válida\"\n",
+        "    elif edad <= 12:\n",
+        "        return \"Niño\"\n",
+        "    elif edad <= 17:\n",
+        "        return \"Adolescente\"\n",
+        "    elif edad <= 64:\n",
+        "        return \"Adulto\"\n",
+        "    else:\n",
+        "        return \"Anciano\"\n",
+        "\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "bvLN4pDum_ls",
+        "outputId": "c5f822d9-368f-4bd6-d5fa-cf1cd83b3034"
+      },
+      "execution_count": 5,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Introduce tu edad: 21\n",
+            "Tu categoría de edad es: Adulto\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "##FUNCIONES\n",
+        "#Las funciones son bloque de codigo en Python que se pueden reutilizar para ejecutar una tarea en especifico\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "Kd9PMHXgtkb5"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# tengo la funcion lineal Y = Mx + b\n",
+        "#quiero evaluar el valor de x=5 en la funcion y= 4x+7\n",
+        "def funcion_lineal(x):\n",
+        "    variable = x # Indented this line by 4 spaces\n",
+        "    y=(4*variable)+7 # Indented this line by 4 spaces\n",
+        "    return y # Indented this line by 4 spaces\n",
+        "#print(f\"el valor de y es: {y}.\")\n",
+        "print(funcion_lineal(5))\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "pW3A_jhOv_nr",
+        "outputId": "07d02575-3c9e-4b12-c2fc-8ea9879e2ff3"
+      },
+      "execution_count": 9,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "27\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Definir la función lineal y = 4x + 7\n",
+        "def funcion_lineal(x):\n",
+        "    return 4 * x + 7\n",
+        "\n",
+        "# Evaluar el valor de x = 5\n",
+        "x = 5\n",
+        "y = funcion_lineal(x)\n",
+        "\n",
+        "print(f\"El valor de y cuando x = {x} en la función y = 4x + 7 es {y}.\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "DD_V38nAv7hE",
+        "outputId": "5ba43580-0889-43c8-baa2-24daab11879a"
+      },
+      "execution_count": 8,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "El valor de y cuando x = 5 en la función y = 4x + 7 es 27.\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Tengo la función lineal y = mx+b\n",
+        "#Deseo evaluar el valor de X = 5 en la función y=4x+7\n",
+        "def funcion_lineal (x) :\n",
+        "    variable = x\n",
+        "    y=(4*variable)+7\n",
+        "    z=print(f\"El valor de y es : {y}.\")\n",
+        "    return z\n",
+        "funcion_lineal(5)"
+      ],
+      "metadata": {
+        "id": "c6GqiqJ-xDxG",
+        "outputId": "750ea166-45e0-4255-fea1-00ec0bce0719",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "execution_count": 7,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "El valor de y es : 27.\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def suma(a,b) :\n",
+        "  return a+b\n",
+        "  print(suma(2,2))\n"
+      ],
+      "metadata": {
+        "id": "Mus9r8sgzaSk"
+      },
+      "execution_count": 15,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\n",
+        "edad = int(input(\"Introduce tu edad: \"))\n",
+        "resultado = es_mayor_de_edad(edad)\n",
+        "print(f\"La persona es: {resultado}\")\n",
+        "\n",
+        "def es_mayor_de_edad(edad):\n",
+        "    if edad >= 18:\n",
+        "        return \"Mayor de edad\"\n",
+        "    else:\n",
+        "        return \"Menor de edad\"\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "Lq3-nE9k0BGw",
+        "outputId": "2ebc3e74-8226-4556-d11e-f5e0adfe9887",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "execution_count": 20,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Introduce tu edad: 19\n",
+            "La persona es: Mayor de edad\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Con Prints\n",
+        "\n",
+        "def verificar_mayoria_edad(edad):\n",
+        "    if edad < 0:\n",
+        "        print (\"Edad no válida\")\n",
+        "    elif edad >= 18:\n",
+        "        print(\"Eres mayor de edad.\")\n",
+        "    else:\n",
+        "        print(\"Eres menor de edad.\")\n",
+        ""
+      ],
+      "metadata": {
+        "id": "ScpIzNhq1PDH"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ],
+  "metadata": {
+    "colab": {
+      "name": "Te damos la bienvenida a Colaboratory",
+      "toc_visible": true,
+      "provenance": [],
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "display_name": "Python 3",
+      "name": "python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 0
+}
